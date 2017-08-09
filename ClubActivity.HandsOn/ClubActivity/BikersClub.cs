@@ -6,25 +6,25 @@ namespace ClubActivity
 {
     public class BikersClub : Club
     {
-        List<PersonInfo> ridersList=new List<PersonInfo>();
-        public BikersClub()
+        public override void Enroll(Person person)
         {
-           // RegestrationForClub();
-            Regestration();
-        }
-        private void Regestration()
-        {
-            foreach(PersonInfo info in listOfPersons)
+            if (CheckEligiblity(person.Age))
             {
-                if(info.Age.PersonAge>18)
-                {
-                    ridersList.Add(info);
-                }
-                else
-                {
-                    throw (new UnderAgeException("Your Age is Below 18 ,So Not Allowed to Join the RidersClub"));
-                }
+                base.Enroll(person);
             }
+
         }
+
+        public bool CheckEligiblity(int age)
+        {
+            if (age < 18)
+            {
+                return false;
+            }
+            else
+                return true;
+        }
+
     }
+
 }

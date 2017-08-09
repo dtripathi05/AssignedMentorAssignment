@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,6 @@ namespace ClubActivity
     {
         static void Main(string[] args)
         {
-            
             try
             {
                 BikersClub club = new BikersClub();
@@ -20,6 +20,5 @@ namespace ClubActivity
             }
             Console.ReadKey();
         }
-
     }
 }

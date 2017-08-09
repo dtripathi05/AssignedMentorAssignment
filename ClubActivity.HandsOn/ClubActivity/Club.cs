@@ -5,20 +5,15 @@ namespace ClubActivity
 {
     public partial class Club
     {
-        public List<PersonInfo> listOfPersons;
-        public Club()
+        public List<Person> GetMembers()
         {
-            RegestrationForClub();
+            return listOfPersons;
         }
-        public void RegestrationForClub()
+        private List<Person> listOfPersons=new List<Person>();
+        
+        public virtual void Enroll(Person person)
         {
-            Input input = new Input();
-            listOfPersons = new List<PersonInfo>();
-            PersonName name = null;
-            Dob dob = null;
-            input.Data(ref name, ref dob);
-            PersonInfo info = new PersonInfo(name, dob);
-            listOfPersons.Add(info);
+            listOfPersons.Add(person);
         }
     }
 }
